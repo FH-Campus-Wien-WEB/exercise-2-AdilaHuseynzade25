@@ -1,41 +1,36 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
-}
+body {
+        font-family: 'Trebuchet MS', sans-serif;
+        background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%) no-repeat fixed;
+    min-height: 100vh;
+    }
 
-img {
-  border-radius: 12px;
-}
+    img {
+        border-radius: 15px;
+    }
 
-article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
-}
+    h1 {
+        font-size: 250%;
+        margin: 10px 5px;
+    }
 
-span {
-  margin-right: 4px;
-}
+    article {
+        background-color: #f7e4ef;
+        border-radius: 20px;
+        margin: 5vw;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-.genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
-}
+    span {
+        margin-right: 10px;
+    }
 
-input {
-  width: 100%;
-}
-
-select {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
-}
+    .genre {
+        background-color: #f079be;
+        padding: 5px 10px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: 2px solid #000;
+    }
