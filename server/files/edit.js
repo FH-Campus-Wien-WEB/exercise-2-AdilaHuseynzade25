@@ -1,7 +1,7 @@
 function setMovie(movie) {
   for (const element of document.forms[0].elements) {
     const name = element.id;
-    const value = movie[name];
+    const value = movie[name] || (name === "Genres" ? [] : "");
 
     if (name === "Genres") {
       const options = element.options;
@@ -67,14 +67,18 @@ function putMovie() {
     - Send the movie data as JSON
   */
 
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status == 200 || xhr.status === 204) {
+      const movieData = getMovie();
+      const xhr = new XMLHttpRequest();
+      xhr.open("PUT", "/movies/" + imdbID);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onload = function () {
+    if (xhr.status == 200 || xhr.status === 204 || xhr.status === 201) {
       location.href = "index.html";
     } else {
       alert("Saving of movie data failed. Status code was " + xhr.status);
     }
   };
+    xhr.send(JSON.stringify(movieData));
 }
 
 /** Loading and setting the movie data for the movie with the passed imdbID */
@@ -96,4 +100,3 @@ xhr.onload = function () {
 };
 
 xhr.send();
-
